@@ -1,7 +1,15 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New client</h1>
+<div class="flex justify-center mt-6  "> 
+<div>
+<span class="mt-6 font-mono text-6xl flew box-decoration-clone bg-gradient-to-r from-blue-600 to-red-500 text-white px-2 ...">
+  The French<br>
+  Cowoking
+</span>
+<div>
 
-  <%= render "form", client: @client %>
+<div class="mt-6 box-content shadow-xl h-[32rem] w-96 p-8 mt-6">
 
-  <%= link_to 'Back to clients', clients_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <h1 class="font-bold text-4xl underline underline-offset-3">Register :</h1>
+    <%= render "form", client: @client %>
+  </div>
 </div>
+<div>

@@ -22,7 +22,7 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :phoneNumber %>
+    <%= form.label :phone_Number %>
     <%= form.text_field :phoneNumber, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
@@ -32,11 +32,10 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :status %>
-    <%= form.text_field :status, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.hidden_field :status, value: "unconfirmed ", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-gradient-to-r from-blue-600 to-red-500 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
