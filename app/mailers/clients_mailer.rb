@@ -1,13 +1,8 @@
 class ClientsMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.clients_mailer.registered.subject
-  #
-  def registered
+  def registered(myEmail)
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: myEmail
   end
 end

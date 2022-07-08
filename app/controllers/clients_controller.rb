@@ -11,16 +11,22 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     respond_to do |format|
       if @client.save
-        ClientsMailer.registered.deliver
+        ClientsMailer.registered(@client.email).deliver
         format.html { redirect_to '/', notice: "Client was successfully created." }
-        format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
   end
 
+  def accepted(cId)
+    @client = Client.find(cId)
+    @client.confirmed
+  end
+
+  def 
+    @clients = Client.find(params[:id])
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
