@@ -19,14 +19,14 @@ class ClientsController < ApplicationController
     end
   end
 
-  def accepted(cId)
+  def accepted!(cId)
     @client = Client.find(cId)
     @client.confirmed
   end
 
-  def 
-    @clients = Client.find(params[:id])
-  end 
+  #def 
+   # @clients = Client.find(params[:id])
+  #end q
 
   private
     # Use callbacks to share common setup or constraints between actions.
