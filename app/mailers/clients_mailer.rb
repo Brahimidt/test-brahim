@@ -1,8 +1,10 @@
 class ClientsMailer < ApplicationMailer
 
-  def registered(myEmail)
+  def registered(client)
     @greeting = "Hi"
+    @client = client
+    @url  = "http://localhost:3000/accepted/"+@client.id.to_s
 
-    mail to: myEmail
+    mail to: client.email
   end
 end
