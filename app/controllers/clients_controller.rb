@@ -19,9 +19,12 @@ class ClientsController < ApplicationController
     end
   end
 
-  def accepted    
+  def accept   
    @client = Client.find(params[:id])
-   @client.confirmed!
+   if @client.rang == 0
+    @client.rang = Client.higherRang+1
+   end
+    @client.confirmed!
   end
 
   private
@@ -32,6 +35,6 @@ class ClientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:name, :email, :phoneNumber, :biography, :status)
+      params.require(:client).permit(:name, :email, :phoneNumber, :biography, :status, :rang)
     end
 end

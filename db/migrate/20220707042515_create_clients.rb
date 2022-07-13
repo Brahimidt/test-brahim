@@ -6,6 +6,7 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.string :phoneNumber
       t.text :biography
       t.integer :status
+      t.integer : rang
 
       t.timestamps
     end

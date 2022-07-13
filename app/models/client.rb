@@ -14,5 +14,6 @@ class Client < ApplicationRecord
     scope :confirmed, -> { where(status.confirmed) }
     scope :accepted, -> { where(status.accepted) }
     scope :expired, -> { where(status.expired) }
+    scope :higherRang, -> { Client.maximum(:rang) } 
 
 end
